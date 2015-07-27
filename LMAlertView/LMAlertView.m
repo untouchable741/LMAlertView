@@ -443,7 +443,7 @@
 	self.window.windowLevel = UIWindowLevelAlert;
 	self.window.hidden = NO;
 	
-    [self transformAlertContainerViewForOrientation];
+//    [self transformAlertContainerViewForOrientation];
     
 	[self.window makeKeyAndVisible];
 	
