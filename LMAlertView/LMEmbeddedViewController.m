@@ -24,4 +24,9 @@
     return self.alertView.autoRotate;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? UIInterfaceOrientationMaskPortrait :
+    UIInterfaceOrientationMaskLandscape;
+}
+
 @end
