@@ -25,7 +25,7 @@
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
-    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? UIInterfaceOrientationMaskPortrait :
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? UIInterfaceOrientationMaskAllButUpsideDown :
     UIInterfaceOrientationMaskLandscape;
 }
 
