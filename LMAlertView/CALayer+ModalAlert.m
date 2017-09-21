@@ -25,15 +25,23 @@
 
 - (UIWindow *)windowForView:(UIView *)view
 {
-	UIView *tempView = view;
-	
-	while (tempView.superview != nil) {
-		tempView = tempView.superview;
-		
-		if ([tempView isKindOfClass:[UIWindow class]]) {
-			return (UIWindow *)tempView;
-		}
-	}
+    UIView *tempView = view;
+    
+    if (![view respondsToSelector:@selector(superview)]) {
+        return nil;
+    }
+    
+    while (tempView.superview != nil) {
+        tempView = tempView.superview;
+        
+        if (![tempView respondsToSelector:@selector(superview)]) {
+            break;
+        }
+        
+        if ([tempView isKindOfClass:[UIWindow class]]) {
+            return (UIWindow *)tempView;
+        }
+    }
 	
 	return nil;
 }
